@@ -1,0 +1,54 @@
+<header class="navbar-fixed-top">
+  <div class="skip-nav">
+    <ul>
+      <li><a href="#navigation">Aller au menu</a></li>
+      <li><a href="#content" accesskey="s">Aller au contenu</a></li>
+      <li><a href="#search" accesskey="4">Aller à la recherche</a></li>
+    </ul>
+  </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" id="navbar-btn">
+          <span class="fa fa-bars"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="im/logo.png" alt=""></a>
+      </div>
+      <div class="navbar-lang">
+        <!--<button>fr</button>-->
+        {% if site.lang == "fr" %}
+          {% capture link1 %}{{ site.baseurl_root }}{{ page.url}}{% endcapture %}
+          <a href="{{ link1 }}" title="{% t global.english %}">en</a>
+        {% else if site.lang == "en" %}
+          {% capture link2 %}{{ site.baseurl_root }}fr{{ page.url}}{% endcapture %}
+          <a href="{{ link2 }}" title="{% t global.french %}">fr</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="nav-aside">
+  <ul class="nav">
+    <li class="btn-presentation active"><a href="#presentation" title="">{% t nav.presentation %}</a></li>
+    <li class="btn-concept"><a href="#concept" title="">{% t nav.concept %}</a></li>
+    <li class="btn-immersion"><a href="#immersion" title="">{% t nav.immersion %}</a></li>
+    <li class="btn-assortment"><a href="#assortment" title="">{% t nav.assortment %}</a></li>
+    <li class="btn-options"><a href="#options" title="">Options</a></li>
+    <li class="btn-accessory"><a href="#accessory" title="">Accessoires</a></li>
+    <li class="btn-uses"><a href="#uses" title="">Usages</a></li>
+    <li class="btn-why"><a href="#why" title="">Pourquoi Manitou</a></li>
+  </ul>
+</nav>
+<nav class="nav-step">
+  <ul class="nav">
+    <li class="btn-presentation active"><a href="#presentation" title=""></a></li>
+    <li class="btn-concept"><a href="#concept" title=""></a></li>
+    <li class="btn-immersion"><a href="#immersion" title=""></a></li>
+    <li class="btn-assortment"><a href="#assortment" title=""></a></li>
+    <li class="btn-options"><a href="#options" title=""></a></li>
+    <li class="btn-accessory"><a href="#accessory" title=""></a></li>
+    <li class="btn-uses"><a href="#uses" title=""></a></li>
+    <li class="btn-why"><a href="#why" title=""></a></li>
+  </ul>
+</nav>

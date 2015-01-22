@@ -1,0 +1,8 @@
+global:
+  english: Anglais
+  french: Français
+nav:
+  presentation: "Présentation"
+  concept: "Le concept"
+  immersion: "Immersion"
+  assortment: "Gamme"
