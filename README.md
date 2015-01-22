@@ -31,13 +31,39 @@ $ which ruby
 
 
 
-
-## Setup
+## Setup a new project (optional)
 Run :
 
 ```
 $ jekyll new project_dir
 ```
+
+
+
+## i18n
+
+### Install
+
+Run : ```$ gem install jekyll-multiple-languages-plugin```
+
+To activate the plugin add this line in to a *.rb file in the _plugins directory:
+
+```
+require 'jekyll/multiple/languages/plugin'
+```
+
+### Usage
+##### Configuration
+Add the i18n configuration to your _config.yml:
+
+```
+languages: ["sv", "en", "de", "fr"]
+```
+
+**Warning : YAML does not accept TAB characters (\t) for indentation.**
+
+
+
 
 
 ## Config (optional help)
@@ -75,27 +101,6 @@ $ jekyll serve
 
 
 
-## i18n
-
-### Install
-
-Run : ```$ gem install jekyll-multiple-languages-plugin```
-
-To activate the plugin add this line in to a *.rb file in the _plugins directory:
-
-```
-require 'jekyll/multiple/languages/plugin'
-```
-
-### Usage
-##### Configuration
-Add the i18n configuration to your _config.yml:
-
-```
-languages: ["sv", "en", "de", "fr"]
-```
-
-**Warning : YAML does not accept TAB characters (\t) for indentation.**
 
 
 
