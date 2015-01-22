@@ -64,6 +64,13 @@ languages: ["sv", "en", "de", "fr"]
 
 
 
+## Serve
+Run : (watch files update by default except _config.yml)
+
+```
+$ jekyll serve
+```
+
 
 
 ## Config (optional help)
@@ -90,17 +97,3 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 gem 'github-pages', versions['github-pages']
 ```
-
-
-## Serve
-Run : (watch files update by default except _config.yml)
-
-```
-$ jekyll serve
-```
-
-
-
-
-
-
