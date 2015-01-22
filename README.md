@@ -40,7 +40,7 @@ $ jekyll new project_dir
 ```
 
 
-## Config
+## Config (optional help)
 Edit ```_config.yml``` you can add these elements :
 
 ```
@@ -49,7 +49,7 @@ source:           docs
 destination:      _gh_pages
 host:             0.0.0.0
 port:             9001
-url:              http://getbootstrap.com
+url:              http://exemple.com
 encoding:         UTF-8
 ```
 
