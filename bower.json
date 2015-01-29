@@ -1,0 +1,21 @@
+{
+  "name": "mlt-x",
+  "version": "1.0.0",
+  "authors": [
+    "Mathieu <mathieu.legac@escaledigitale.com>"
+  ],
+  "description": "Manitou MLT-X Experience",
+  "main": "_less/main.less",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "font-awesome": "~4.3.0"
+  }
+}
