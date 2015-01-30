@@ -2,6 +2,24 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/_assets/im',
+            src: '**',
+            dest: '_site/assets/im'
+          },
+          {
+            expand: true,
+            cwd: 'src/_assets/video',
+            src: '**',
+            dest: '_site/assets/video/'
+          },
+        ],
+      },
+    },
     concat: {
       dist: {
         src: ['vendor/jquery/dist/jquery.min.js',
@@ -77,6 +95,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -85,6 +104,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-jekyll');
 
-  grunt.registerTask('default', ['jshint', 'jekyll', 'concat', 'uglify', 'less:build', 'connect:localhost']);
+  grunt.registerTask('default', ['jshint', 'jekyll', 'copy:main', 'concat', 'uglify', 'less:build', 'connect:localhost']);
 
 };
