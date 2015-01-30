@@ -1,0 +1,25 @@
+#!/bin/sh
+# .git/hooks/post-commit
+
+# Check if the commit is done on master branch
+if [ $(git rev-parse --abbrev-ref HEAD) = "master" ]; then
+	git checkout gh-pages
+
+	# Get new content from master to gh-pages
+	# This is the part to adapt
+	FILE="_site"
+	git checkout master -- $FILE
+	git reset HEAD $FILE # Remove file from stage
+	mv $FILE/* ./
+	git commit -am "Get content from master branch"
+
+	git checkout master
+fi
+
+#!/bin/sh
+
+#git checkout gh-pages                                  # switch to gh-pages branch
+#git checkout master -- _site                           # checkout just the exquery-restxq-specification folder from master
+#git commit -m "Merge in of docs from master branch"    # commit the changes
+#git push                                               # uncomment if you want to auto-push
+#git checkout master                                    # switch back to the master branch
