@@ -48,6 +48,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    jekyll: {
+      options: {
+        config: '_config.yml'
+      },
+      dist: {}
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'concat', 'uglify', 'less:build']
@@ -59,7 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-jekyll');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less:build']);
+  grunt.registerTask('default', ['jshint', 'jekyll', 'concat', 'uglify', 'less:build']);
 
 };
