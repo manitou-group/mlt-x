@@ -1,0 +1,136 @@
+<section id="why" class="why">
+	<article>
+		  <div class="content content-bottom-right">
+			  <h1>Manitou vous accompagne !</h1>
+			  <p class="intro">Pour bénéficier d’un chariot opérationnel toute l’année, Manitou vous propose une large gamme de produits & services qui s’adapte à tous vos besoins.</p>
+		  </div>
+	</article>
+	<img src="{{path}}/im/bckg7.jpg" alt="" class="background-cover">
+</section>
+
+<section id="why-service" class="why-service">
+	<article>
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Le service Manitou</h1>
+				<p class="intro">Votre concessionnaire MANITOU vous garantit une gamme complète de services à toutes les étapes de la vie de votre machine. Il vous accompagnera et s’adaptera à vos besoins pour vous offrir la meilleure solution à votre besoin.</p>
+				<ul>
+					<li class="service">
+						<h4>Groupe Manitou</h4>
+						<p>Manitou développe des solutions de manutention sur 3 marchés. Agriculture, Construction et Industrie</p>
+					</li>
+					<li class="service">
+						<h4>Contrat de maintenance</h4>
+						<p>Manitou vous propose 3 niveaux d’accompagnement qui s’adaptent à vos besoins : Initial, Advance, Excellence</p>
+					</li>
+					<li class="service">
+						<h4>Pièces de rechange d'origine</h4>
+						<p>Avec plus de 70 000 références disponibles, votre concessionnaire Manitou c’est... l’expertise et le service au quotidien !</p>
+					</li>
+					<li class="service">
+						<h4>Financement</h4>
+						<p>Acheter ou louer ? Prêt ou Location financière ? <br> MANITOU vous aide à choisir la solution de financement la mieux adaptée à votre activité.</p>
+					</li>
+					<li class="service">
+						<h4>Géolocalisation</h4>
+						<p>Une solution de gestion de flotte simple et flexible pour optimiser le suivi opérationnel de vos machines.</p>
+					</li>
+					<li class="service">
+						<h4>Extensiond de garantie</h4>
+						<p>Vous souhaitez être protégés des imprévus au-delà de la garantie contractuelle ? <br>L’extension de garantie Maniplus, prolonge de 24 à 48 mois la couverture de votre Manitou.</p>
+					</li>
+					<li class="service">
+						<h4>Occasion</h4>
+						<p>Le réseau MANITOU vous propose des matériels sélectionnés, expertisés et référencés.</p>
+					</li>
+				</ul>
+				<a href="http://used.manitou.com/fr" target="_blank" class="btn btn-primary">
+					<i class="fa fa-tag"></i>
+					<span>Trouver une occasion</span>
+				</a>
+			</div>
+		</div>
+			  
+	</article>
+	<img src="{{path}}/im/bkg-service.png" alt="" class="background-cover">
+</section>
+
+<section id="why-reduce" class="why-reduce">
+	<article>
+		<div class="embed-responsive embed-responsive-16by9">
+			<div class="reduce-overlay">
+				<div class="reduce-buttons">
+					<a href="http://used.manitou.com/fr" target="_blank" class="btn btn-primary">
+						<i class="fa fa-share-square-o"></i>
+						<span>Calculez la consommation sur Reduce</span>
+					</a>
+					<a href="http://used.manitou.com/fr" target="_blank" class="btn btn-default">
+						<i class="fa fa-download"></i>
+						<span>Téléchargez l'application iPad</span>
+					</a>
+					<a id="replay">Rejouer la vidéo</a>
+				</div>
+			</div>
+			<div class="embed-responsive-item" id="player"></div>
+		</div>
+	</article>
+
+</section>
+
+	<script type="text/javascript">
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var player;
+
+		function onYouTubeIframeAPIReady() {
+		  player = new YT.Player('player', {
+			height: '390',
+			width: '640',
+			playerVars: {
+			  showinfo: 0,
+			  rel: 0,
+			  controls: 1,
+			  modestbranding: 0
+			},
+			videoId: 'yAd1bikTuvQ',
+			events: {
+			  'onStateChange': onPlayerStateChange
+			}
+		  });
+		}
+		
+		function onPlayerStateChange(event) {
+		  if (event.data == YT.PlayerState.ENDED) {
+			$('.reduce-overlay').show();
+			$('#player').fadeOut(1000);
+		  }
+		}
+		$('#replay').on('click', function (e) {
+		  e.preventDefault();
+		  $('#player').show();
+		  $('.reduce-overlay').fadeOut(1000);
+		  player.playVideo();
+		});
+	</script>
+
+<section class="why-map" id="why-map">
+	<article>
+		<div class="map-overlay">
+				<div class="map-intro">
+					<h1>Un groupe mondial</h1>
+					<p>1 400 concessionaires à votre service.</p>
+					<p>Le réseau MANITOU est présent dans plus de 120 pays.</p>
+					<p>Au total, ce sont plus de 2000 techniciens experts, spécialement formés à la technologie MANITOU, qui sont à votre service, de l’achat au service après-vente.</p>
+					<button id="map-reduce" href="http://used.manitou.com/fr" target="_blank" class="btn btn-primary">
+						<i class="fa fa-globe"></i>
+						<span>Trouvez une concession</span>
+					</button>
+				</div>
+		</div>
+	</article>
+	<div class="iframe-container">
+		<iframe src="http://maps.manitou.com/index.php?page=nice-map" frameborder="0"></iframe>
+	</div>
+</section>
