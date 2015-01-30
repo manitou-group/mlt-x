@@ -296,7 +296,7 @@ $(function() {
 			$('#carousel-concept article').removeClass("carousel-inner");
 		}
 	});
-	$('.concept .carousel-indicators-mobile li').on("click",function(){ 
+	$('.concept .carousel-indicators-mobile li').on("click",function(){
    		$('.concept .carousel-indicators-mobile li.active').removeClass("active");
     	$(this).addClass("active");
 	});
@@ -325,7 +325,7 @@ $(function() {
 				return '<a>' + itemName + '</a>';
 			}
 			else {
-				//@TODO: find better solution to avoid "undefined" (= final empty slide) element on dots bar. 
+				//@TODO: find better solution to avoid "undefined" (= final empty slide) element on dots bar.
 				return '<a class="hide">' + itemName + '</a>';
 			}
 		},
@@ -368,14 +368,14 @@ $(function() {
 		if ($(window).width() < 768) {
 			$(".options-labels ul li")
 				.queue(
-					function(next){ 
-						$(this).css('color','transparent'); 
+					function(next){
+						$(this).css('color','transparent');
 						next();
 					})
 				.delay( 400 )
-				.queue( 
-					function(next){ 
-						$(this).css('color','#444'); 
+				.queue(
+					function(next){
+						$(this).css('color','#444');
 						next();
 					});
 		}
@@ -472,7 +472,7 @@ $(function() {
 			$('#carousel-options article').removeClass("carousel-inner");
 		}
 	});
-	$('.options .carousel-indicators-mobile li').on("click",function(){ 
+	$('.options .carousel-indicators-mobile li').on("click",function(){
    		$('.options .carousel-indicators-mobile li.active').removeClass("active");
     	$(this).addClass("active");
 	});
@@ -572,30 +572,58 @@ $(function() {
 			$('#carousel-accessory article').removeClass("carousel-inner");
 		}
 	});
-	$('.accessory .carousel-indicators-mobile li').on("click",function(){ 
+	$('.accessory .carousel-indicators-mobile li').on("click",function(){
    		$('.accessory .carousel-indicators-mobile li.active').removeClass("active");
     	$(this).addClass("active");
 	});
-	
+
 	//slideshow in uses-view
-	$('.uses-navbar li').on("click",function(){ 
+	$('.uses-navbar li').on("click",function(){
    		$('.uses-navbar li.active').removeClass("active");
     	$(this).addClass("active");
 	});
-	
-	//video reduce view
 
-	/*function onPlayerStateChange(event) {        
-		if(event.data === YT.PlayerState.ENDED) { 
-			console.log("video ended");
-			$(".reduce-overlay").addClass("reduce-overlay-open");
+	//video reduce view
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	var player;
+
+	function onYouTubeIframeAPIReady() {
+	  player = new YT.Player('player', {
+		height: '390',
+		width: '640',
+		playerVars: {
+		  showinfo: 0,
+		  rel: 0,
+		  controls: 1,
+		  modestbranding: 0
+		},
+		videoId: 'yAd1bikTuvQ',
+		events: {
+		  'onStateChange': onPlayerStateChange
 		}
-	}*/
-	
+	  });
+	}
+
+	function onPlayerStateChange(event) {
+	  if (event.data == YT.PlayerState.ENDED) {
+		$('.reduce-overlay').show();
+		$('#player').fadeOut(1000);
+	  }
+	}
+	$('#replay').on('click', function (e) {
+	  e.preventDefault();
+	  $('#player').show();
+	  $('.reduce-overlay').fadeOut(1000);
+	  player.playVideo();
+	});
+
 	//map reduce view
 	$('#map-reduce').click(function(){
 		$('.map-overlay').hide();
 	});
-	
+
 });
 

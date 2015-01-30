@@ -96,7 +96,7 @@
 		  </div>
 	</article>
 	<video autoplay loop class="background-cover">
-			<source src="/assets/video/video-manitou-test.mov" />
+		<source src="/assets/video/video-manitou-test.mov" />
 	</video>
 	<img src="/assets/im/img-presentation.png" alt="" class=" video-fallback background-cover">
 </section>
@@ -1415,44 +1415,6 @@
 
 </section>
 
-	<script type="text/javascript">
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		var player;
-
-		function onYouTubeIframeAPIReady() {
-		  player = new YT.Player('player', {
-			height: '390',
-			width: '640',
-			playerVars: {
-			  showinfo: 0,
-			  rel: 0,
-			  controls: 1,
-			  modestbranding: 0
-			},
-			videoId: 'yAd1bikTuvQ',
-			events: {
-			  'onStateChange': onPlayerStateChange
-			}
-		  });
-		}
-
-		function onPlayerStateChange(event) {
-		  if (event.data == YT.PlayerState.ENDED) {
-			$('.reduce-overlay').show();
-			$('#player').fadeOut(1000);
-		  }
-		}
-		$('#replay').on('click', function (e) {
-		  e.preventDefault();
-		  $('#player').show();
-		  $('.reduce-overlay').fadeOut(1000);
-		  player.playVideo();
-		});
-	</script>
-
 <section class="why-map" id="why-map">
 	<article>
 		<div class="map-overlay">
@@ -1475,13 +1437,7 @@
 
     </main>
 
-    <!--
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="assets/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
-<script src="/asset/js/main" type="text/javascript"></script>
--->
-
+    <script src="/assets/js/mlt-x-1.0.0.js" type="text/javascript"></script>
 <script type="text/javascript">
   var $buoop = {vs:{i:8,f:20,o:17,s:6},reminder:0};
   $buoop.ol = window.onload;

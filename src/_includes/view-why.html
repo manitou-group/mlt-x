@@ -77,44 +77,6 @@
 
 </section>
 
-	<script type="text/javascript">
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		var player;
-
-		function onYouTubeIframeAPIReady() {
-		  player = new YT.Player('player', {
-			height: '390',
-			width: '640',
-			playerVars: {
-			  showinfo: 0,
-			  rel: 0,
-			  controls: 1,
-			  modestbranding: 0
-			},
-			videoId: 'yAd1bikTuvQ',
-			events: {
-			  'onStateChange': onPlayerStateChange
-			}
-		  });
-		}
-
-		function onPlayerStateChange(event) {
-		  if (event.data == YT.PlayerState.ENDED) {
-			$('.reduce-overlay').show();
-			$('#player').fadeOut(1000);
-		  }
-		}
-		$('#replay').on('click', function (e) {
-		  e.preventDefault();
-		  $('#player').show();
-		  $('.reduce-overlay').fadeOut(1000);
-		  player.playVideo();
-		});
-	</script>
-
 <section class="why-map" id="why-map">
 	<article>
 		<div class="map-overlay">
