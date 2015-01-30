@@ -54,6 +54,23 @@ module.exports = function(grunt) {
       },
       dist: {}
     },
+    /**
+    * Start a connect web server.
+    */
+    connect: {
+      localhost: {
+        options: {
+          port: 9002,
+          open: {
+            target: 'http://localhost:9002/'
+          },
+          keepalive:true,
+          base: ['_site'],
+          livereload: false,
+          hostname: 'localhost',
+        }
+      }
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'concat', 'uglify', 'less:build']
@@ -65,8 +82,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-jekyll');
 
-  grunt.registerTask('default', ['jshint', 'jekyll', 'concat', 'uglify', 'less:build']);
+  grunt.registerTask('default', ['jshint', 'jekyll', 'concat', 'uglify', 'less:build', 'connect:localhost']);
 
 };
