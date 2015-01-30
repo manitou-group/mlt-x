@@ -1,0 +1,215 @@
+// Imports
+// -------------------------
+
+@vendor_path: "vendor";
+
+// Imports Assets
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic);
+@import "@{vendor_path}/bootstrap/less/bootstrap.less";
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+
+/*
+// Import Utilities
+@import "reset";
+@import "mixins";
+@import "social-colors";
+@import "types";
+
+// Import Components
+@import "header";
+@import "footer";
+@import "button";
+@import "nav-aside-and-step";
+@import "slick";
+@import "modal";
+
+//Import views
+@import "view-presentation";
+@import "view-assortment";
+@import "view-concept";
+@import "view-immersion";
+@import "view-accessory";
+@import "view-options";
+@import "view-uses";
+@import "view-why";
+*/
+
+// Variables
+// -------------------------
+
+// Typography
+@font-family-sans-serif:  "Lato", Helvetica, Arial, sans-serif;
+
+// Iconography
+@fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts";
+
+// Colors
+@red: #e2001a;
+@brand-primary: @red;
+@black: #333;
+@blue: #5ea5ab;
+@white: #fff;
+
+@green-dark: #cddc39;
+@green-light: #6cc724;
+@purple: #b558ee;
+@yellow: #ffeb3b;
+@orange: #ff8100;
+@blue-light: #3ca1e1;
+
+@gray: #999;
+@gray-bckg : #ededed;
+@gray-bckg-dark : #d9d9d9;
+@gray-border : #d5d5d5;
+@gray-border-light: #f0f0f0;
+@gray-border-lighter: #f2f2f2;
+@gray-bckg-light : #fcfcfc;
+@gray-border-dark : #c3c3c3;
+@gray-light: #eaeaea;
+@gray-lighter: #e5e5e5;
+@gray-bkg-dark: #3b3b3b;
+
+@text-color: #444;
+@text-gray: #b2b2b2;
+@body-bg: #fafafa;
+
+// Grid & Container
+@container-lg: @container-md;
+//@grid-gutter-width: 30px;
+
+// Navbar
+@navbar-height: 50px;
+@navbar-margin-bottom: 0;
+@navbar-border-radius: 0;
+@navbar-default-color: @text-color;
+//@navbar-default-bg: #fff;
+@navbar-default-link-color: @text-color;
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-link-hover-bg: transparent;
+@navbar-default-link-active-color: @brand-primary;
+@navbar-default-link-active-bg: transparent;
+@navbar-padding-horizontal: 0;
+//@navbar-default-toggle-hover-bg: #ddd;
+//@navbar-default-toggle-icon-bar-bg: #888;
+//@navbar-default-toggle-border-color: #ddd;
+
+// Custom Variables
+// -------------------------
+
+// Button
+@btn-height: 40px; // custom
+@btn-lg-height: 60px; // custom
+
+//media-query
+@media-break: 480px;
+
+
+// Styles
+// -------------------------
+
+html,
+body,
+main {
+	height: 100%;
+}
+
+section {
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+	&:nth-child(1) {
+		padding-top: 50px;
+	}
+	@media (max-width: @media-break) {
+		/*height: 100%;*/
+		overflow-x: hidden;
+	}
+	/*article {
+		padding-left: 100px;
+		padding-top: 50px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}*/
+}
+.content {
+	width: 750px;
+	position: absolute;
+	z-index: 2;
+	text-shadow: 0 0 10px rgba(0,0,0,0.8);
+	@media (max-width: 850px) {
+		width: 85%;
+		left: 6%;
+	}
+	&.content-top-right {
+		top: 100px; //6%
+		right: 100px; //6%
+		text-align: right;
+		@media (max-width: 850px) {
+			text-align: left;
+		}
+	}
+	&.content-bottom-right {
+		bottom: 100px; //15%
+		right: 100px; //6%
+		text-align: right;
+		@media (max-width: 850px) {
+			text-align: left;
+			bottom: 6%;
+		}
+	}
+	p.intro {
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 200;
+	}
+}
+
+/* ---------------------------------------------- */
+/* --------- TEMP : STYLEGUIDE ----------*/
+/* -------------------------------------------- */
+
+.styleguide {
+	background: @gray;
+	display: block;
+	width: 100%;
+	height: 100%;
+	article {
+		padding-top: 100px;
+		padding-left: 120px;
+	}
+}
+
+/* ---------------------------------------------- */
+/* --------- TEMP : bkg.less ----------*/
+/* -------------------------------------------- */
+
+main {
+	.background-cover {
+	  position: absolute;
+	  top: 0;
+	  z-index: -1;
+	  &.bkgwidth { 
+		  width: 100%; 
+		  height: auto;
+	  }
+	  &.bkgheight {
+		  height: 100%;
+		  width: auto;
+	  }
+	}
+	.video-fallback {
+		z-index: -2;
+	}
+}
+
+
+
+
+  
+
+
+
+
