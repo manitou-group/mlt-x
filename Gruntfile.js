@@ -24,6 +24,7 @@ module.exports = function(grunt) {
       dist: {
         src: ['vendor/jquery/dist/jquery.min.js',
               'vendor/bootstrap/dist/js/bootstrap.min.js',
+              'vendor/slick-carousel/slick/slick.min.js',
               'src/_assets/js/*.js'],
         dest: '_site/assets/js/<%= pkg.name %>-<%= pkg.version %>.js'
       }
