@@ -38,6 +38,5 @@ validation-report.json
 validation-status.json
 
 # Folders to ignore
-vendor
 bower_components
 node_modules
