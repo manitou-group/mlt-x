@@ -1,0 +1,342 @@
+.assortment {
+	height: 100%;
+	min-height: 770px;
+	background: @white;
+	@media (max-width: 767px) {
+		height: 960px;
+	}
+	article {
+		position: relative;
+		z-index: 10;
+		.row {
+			position: absolute;
+			padding-right: 100px;
+			padding-top: 90px;
+			width: 100%;
+			@media (max-width: 1149px) {
+				margin: 0;
+			}
+			@media (max-width: 767px) {
+				padding-top: 20px;
+				padding-right: 0;
+			}
+			.col-container {
+				padding: 0;
+				position: relative;
+				.options-labels {
+					/* mostly hidden content used to align the labels with the slideshow */
+					display: block;
+					width: 33.3333333%;
+					padding: 0;
+					position: absolute;
+					left: -33%;
+					@media (max-width: 1149px) {
+						width: 50%;
+					}
+					@media (max-width: 991px) {
+						width: 100%;
+						left: -50%;
+					}
+					@media (max-width: 767px) {
+						left: 50%;
+						top: 230px; /* height of .abacus */
+						z-index: 5;
+						margin-left: -140px;
+						width: 320px;
+					}
+					img  {
+						visibility: hidden;
+					}
+					h3 {
+						visibility: hidden;
+						line-height: 30px;
+						@media (min-width: 1150px) and (max-width: 1350px) {
+							margin-bottom: 35px;
+						}
+					}
+					ul {
+						padding: 0;
+						li {
+							color: @text-color;
+							list-style: none;
+							font-size: 12px;
+							line-height: 25px;
+							padding-left: 10px;
+							&:nth-child(odd) {
+								@media (min-width: 768px) {
+									background: @gray-light;
+								}
+								border-radius: 3px;
+							}
+							&:nth-child(8) {
+								//Hack to force 1 line dimension
+								@media (max-width: 767px) {
+									margin-top: 25px;
+								}
+							}
+						}
+					}
+					.note {
+						color: @gray;
+						font-size: 12px;
+						font-style: italic;
+						padding-left: 10px;
+					}
+				}
+				.slideshow {
+					@media (max-width: 767px) {
+						width: 320px !important;
+						margin: 0 auto;
+					}
+					.item {
+						position: relative;
+						@media (max-width: 767px) {
+							width: 320px !important;
+						}
+						img.img-product  {
+							opacity: 0.4;
+						}
+						h3 {
+							font-size: 24px;
+							font-weight: 700;
+							color: @text-color;
+							line-height: 30px;
+							@media (min-width: 1150px) and (max-width: 1350px) {
+								//Add margin bottom for no visual conflict with btn.carousel-control
+								margin-bottom: 35px;
+							}
+						}
+						img.abacus {
+							display: none;
+							@media (max-width: 767px) {
+								//beyond this breakpoint .abacus is shown in a modal
+								display: block;
+								width: 180px;
+								margin: 0 auto;
+							}
+						}
+						ul:not(.dropdown-menu) {
+							padding: 0;
+							@media (max-width: 767px) {
+								margin-top: 2px; //fix for the height when abacus is shown on mobile view
+							}
+							li {
+								color: @text-color;
+								list-style: none;
+								font-size: 14px;
+								text-align: center;
+								line-height: 25px;
+								&:nth-child(odd) {
+									background: @gray-light;
+								}
+							}
+						}
+						.elipse-shadows {
+							display: none;
+							position: absolute;
+							top: 0;
+							height: 652px;
+							width: 106px;
+							overflow: hidden;
+							img {
+								height: 100%;
+								width: 200%;
+							}
+						}
+						.btn-group {
+							opacity: 0;
+						}
+						&.active {
+							img.img-product  {
+								opacity: 1;
+							}
+							h3 {
+								font-size: 30px;
+								line-height: 30px;
+								font-weight: 900;
+								color: @black;
+								text-align: center;
+							}
+							ul:not(.dropdown-menu) {
+								padding: 0 15px;
+								li {
+									color: @black;
+									list-style: none;
+									font-size: 14px;
+									text-align: center;
+									line-height: 25px;
+									font-weight: 700;
+									&:nth-child(odd) {
+										background: @gray-lighter;
+										border-radius: 3px;
+									}
+									@media (max-width: 767px) {
+										font-size: 12px;
+										text-align: right;
+										padding-right: 10px;
+									}
+									&:nth-child(7) {
+										//Hack to force 1 line dimension
+										@media (min-width: 1150px) and (max-width: 1285px) {
+											font-size: 12px;
+										}
+										@media (max-width: 767px) {
+											padding-left: 50%;
+										}
+									}
+								}
+							}
+							.btn-group {
+								opacity: 1;
+								width: 100%;
+								padding: 0 10px;
+								@media (max-width: 767px){
+									margin-top: 40px;
+								}
+								button {
+									width: 100%;
+									margin: 5px 0 5px;
+									border-radius: 4px;
+									z-index: 2;
+								}
+								.dropdown-menu {
+									position: relative;
+								}
+								@media (max-width: 767px) {
+									.btn-abacus {
+										display: none;
+									}
+					  			}
+							}
+						}
+						&.active-left {
+							border-right: 1px solid @gray-lighter;
+							@media (max-width: 991px) {
+								border: none;
+							}
+							.elipse-shadows {
+								right: 0;
+								display: block;
+								@media (max-width: 991px) {
+									display: none;
+								}
+								img {
+									margin-left: -100%;
+								}
+							}
+						}
+						&.active-right {
+							border-left: 1px solid @gray-lighter;
+							@media (max-width: 991px) {
+								border: none;
+							}
+							.elipse-shadows {
+								display: block;
+								@media (max-width: 991px) {
+									display: none;
+								}
+							}
+						}
+						&.item-zero,
+						&.item-last {
+							@media (max-width: 991px) {
+								display: none !important;
+							}
+						}
+					}
+					.carousel-control {
+						height: 200px;
+						width: 50px;
+						background: @gray-lighter;
+						opacity: 1;
+						border-radius: 10px;
+						@media (max-width: 767px) {
+							background: transparent;
+							color: @gray-lighter;
+							top: 100px;
+						}
+						&.left {
+							background-image: none;
+							left: -60px;
+							@media (max-width: 767px) {
+								left: 0;
+							}
+							i {
+								width: 30px;
+								margin-top: -25px;
+								font-size: 50px;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								display: inline-block;
+								margin-left: -15px;
+								text-shadow: none;
+							}
+						}
+						&.right {
+							background-image: none;
+							right: -60px;
+							@media (max-width: 767px) {
+								right: 0;
+							}
+							i {
+								width: 30px;
+								margin-top: -25px;
+								font-size: 50px;
+								position: absolute;
+								top: 50%;
+								right: 50%;
+								display: inline-block;
+								margin-right: -15px;
+								text-shadow: none;
+							}
+						}
+						&:hover {
+							background: #ccc;
+							cursor: pointer;
+							@media (max-width: 767px) {
+								background: transparent;
+							}
+						}
+					}
+					.slick-dots {
+					  display: none;
+					  @media (min-width:  768px) {
+					  	  position: fixed;
+						  display: block;
+						  width: 104%;
+						  z-index: 1030;
+						  background: @black;
+						  height: 50px;
+						  text-align: center;
+						  bottom: -50px;
+						  padding: 0;
+						  margin: 0;
+						  margin-left: -31%;
+						  &.slick-dots-open {
+							  bottom: 0;
+						  }  
+						  li {
+							  list-style: none;
+							  display: inline-block;
+							  margin: 0 15px;
+							  width: auto;
+							  &.slick-active {
+							  	a {
+									color: @red;
+								}
+							  }
+							  a {
+								  color: @white;
+								  font-size: 14px;
+								  font-weight: 300;
+								  line-height: 50px;
+							  }
+						  }
+					  }
+					}
+				} /* /.slideshow */
+			}
+		}
+	}
+}

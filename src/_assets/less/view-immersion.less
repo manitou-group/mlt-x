@@ -1,0 +1,184 @@
+.immersion {
+	min-height: 0;
+	@media (max-width: 850px) {
+		height: 100%;
+	}
+	img {
+		width: 100%;
+		z-index: -1;
+		position: relative;
+		@media (max-width: @media-break) {
+			height: 100%;
+			width: auto;
+			margin-left: -50%;
+		}
+		&.background-immersion {
+			@media (max-width: 850px) {
+				display: none;
+			}
+		}
+	}
+	article {
+		@media (max-width: 850px) {
+			width: 100%;
+			height: 100%;
+		}
+		.description_points {
+			position: relative;
+			@media (max-width: 850px) {
+				display: none;
+			}
+			.point {
+				width: 40px;
+				line-height: 30px;
+				text-align: center;
+				border-radius: 50%;
+				background: #fff;
+				color: #222;
+				position: absolute;
+				padding: 0;
+				border: 5px solid transparent;
+				&:hover {
+					font-size: 16px;
+					border: 2px solid #fff;
+					background: rgba(63,63,63, 0.2);
+					color: #fff;
+					cursor: pointer;
+					padding: 3px 0;
+				}
+				&.point-1 {
+					margin-top: 18%;
+					left: 36%;
+				}
+				&.point-2 {
+					margin-top: 24%;
+					left: 47%;
+				}
+				&.point-3 {
+					margin-top: 21%;
+					left: 58%;
+				}
+				&.point-4 {
+					margin-top: 33%;
+					left: 31%;
+				}
+				&.point-5 {
+					margin-top: 34%;
+					left: 44%;
+				}
+				&.point-6 {
+					margin-top: 26%;
+					left: 77%;
+				}
+				&.point-7 {
+					margin-top: 34%;
+					left: 64%;
+				}
+
+			}
+			.tooltip-inner {
+				width: 280px;
+				padding: 5px 10px;
+				color: @text-color;
+				text-align: center;
+				text-decoration: none;
+				background-color: @white;
+				border-radius: 3px;
+			}
+			.tooltip.bottom .tooltip-arrow{
+				top:0;
+				left:50%;
+				margin-left:-5px;
+				border-left:5px solid transparent;
+				border-right:5px solid transparent;
+				border-bottom:5px solid @white
+			}
+
+		}
+		.carousel {
+		  @media (min-width: 851px) {
+			  display: none;
+		  }
+		  height: 100%;
+		  width: 100%;
+		  .carousel-indicators {
+
+		  }
+		  .carousel-inner {
+		  	height: 100%;
+			  .item {
+			  	  height: 100%;
+				  .point {
+					  width: 40px;
+					  line-height: 30px;
+					  text-align: center;
+					  border-radius: 50%;
+					  position: absolute;
+					  font-size: 16px;
+					  border: 1px solid #fff;
+					  background: rgba(63,63,63, 0.2);
+					  color: #fff;
+					  cursor: pointer;
+					  padding: 4px 0;
+					  top: 50%;
+					  margin-top: -100px;
+					  left: 50%;
+					  margin-left: -20px;
+				  }
+				  .tooltip.bottom {
+					  opacity: 1;
+					  top: 50%;
+					  margin-top: -100px;
+					  left: 50%;
+					  margin-left: -20px;
+					  .tooltip-inner {
+						  width: 280px;
+						  padding: 5px 10px;
+						  color: @text-color;
+						  text-align: center;
+						  text-decoration: none;
+						  background-color: @white;
+						  border-radius: 3px;
+						  margin-left: -70px;
+						  margin-top: 43px; //point width + 3px of the arrow
+					  }
+					  .tooltip-arrow{
+						  top: 0;
+						  left: 50%;
+						  margin-left: -5px;
+						  border-left: 5px solid transparent;
+						  border-right: 5px solid transparent;
+						  border-bottom: 5px solid @white;
+						  margin-left: -50px;
+						  margin-top: 43px; //point width + 3px of the arrow
+					  }
+				  }
+				  img {
+				  	height: 100%;
+					width: auto;
+					max-width: none;
+				  }
+			  }
+		  }
+		}
+	}
+	.background-cover {
+		@media (max-width: 850px) {
+			display: none;
+		}
+	}
+}
+.immersion-360 {
+	background: -moz-linear-gradient(155deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(155deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(155deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=rgba(0,0,0,0) 40%, EndColorStr=rgba(0,0,0,1) 100%)";
+    background: linear-gradient(155deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+	@media (max-width: 850px) {
+		background: -moz-linear-gradient(-160deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+		background: -o-linear-gradient(-160deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+		background: -webkit-linear-gradient(-160deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+		filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=rgba(0,0,0,1) 60%, EndColorStr=rgba(0,0,0,0) 100%)";
+		background: linear-gradient(-160deg, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+	}
+}

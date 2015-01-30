@@ -1,0 +1,115 @@
+// Header
+// --------------------------
+
+header {
+	z-index: 1030;
+	.skip-nav {
+		ul {
+			.container;
+			list-style: none;
+			margin-bottom: 0;
+			> li {
+				float: left;
+				padding-right: 15px;
+				> a {
+					color: #fff;
+					font-size: 11px;
+					display: none;
+					&:focus,
+					&:hover {
+						color: @gray-lighter;
+					}
+				}
+			}
+		}
+	}
+	.navbar {
+		border: 0;
+		background: @black;
+		box-shadow: 0 0 25px rgba(0,0,0,0.5);
+		height: 50px;
+		.navbar-header {
+			margin-left: 10px;
+			button {
+				background: transparent;
+				border: none;
+				color: @red;
+				font-size: 22px;
+				padding-left: 5px;
+				-webkit-transition: transform;
+				-o-transition: transform;
+				transition: transform;
+				-webkit-transition: transform .2s ease-out;
+				-moz-transition: transform .2s ease-out;
+				transition: transform .2s ease-out;
+				will-change: transform;
+				&.in {
+					-webkit-transform: rotate(-90deg);
+					-ms-transform: rotate(-90deg);
+					-o-transform: rotate(-90deg);
+					transform: rotate(-90deg);
+				}
+			}
+			.navbar-brand {
+				float: none;
+				line-height: 45px;
+				font-size: 28px;
+				margin-left: 25px;
+				> img {
+					height: 17px;
+					display: inline;;
+				}
+			}
+			@media (max-width: 768px) {
+				float: left;
+			}
+		}
+		.navbar-lang {
+			float: right;
+			display: block;
+			height: 50px;
+			margin-right: -15px;
+			padding: 0 20px;
+			border-left: 1px solid #252525;
+			.dropdown{
+				button {
+					line-height: 50px;
+					background: transparent;
+					border: none;
+					width: 50px;
+					color: @gray;
+					.transition(color);
+					&:hover,
+					&:focus {
+						color: @white;
+					}
+				}
+				.dropdown-menu {
+					width: 70px;
+					min-width: 0;
+					margin: -10px 0 0 -10px;
+					border-radius: 0;
+					background: #252525;
+					text-align: center;
+					text-transform: uppercase;
+					padding: 10px 0 0;
+					z-index: -1;
+					li {
+						a {
+							color: @white;
+							line-height: 40px;
+							&:hover,
+							&:focus {
+								background: transparent;
+								color: @red;
+								box-shadow: none;
+								outline: none;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
